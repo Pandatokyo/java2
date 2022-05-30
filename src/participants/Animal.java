@@ -32,9 +32,9 @@ public abstract class Animal implements Participant {
     @Override
     public void run(int distance) {
         if (distance <= maxRunDistance) {
-            System.out.println(name + " успешно пробежал кросс");
+            System.out.println(name + " пробежал кросс");
         } else {
-            System.out.println(name + " не справился с кроссом");
+            System.out.println(name + " не смог пробежать кросс");
             onDistance = false;
         }
     }
@@ -42,9 +42,9 @@ public abstract class Animal implements Participant {
     @Override
     public void jump(int height) {
         if (height <= maxJumpHeight) {
-            System.out.println(name + " успешно перепрыгнул стену");
+            System.out.println(name + " перепрыгнул стену");
         } else {
-            System.out.println(name + " не справился с прыжком");
+            System.out.println(name + " не смог перепрыгнуть стену");
             onDistance = false;
         }
     }
@@ -55,7 +55,7 @@ public abstract class Animal implements Participant {
             System.out.println(name + " не умеет плавать");
             onDistance = false;
         } else if (distance <= maxSwimDistance) {
-            System.out.println(name + " успешно переплыл");
+            System.out.println(name + " смог переплыть");
         } else {
             System.out.println(name + " не смог переплыть");
             onDistance = false;
@@ -64,6 +64,6 @@ public abstract class Animal implements Participant {
 
     @Override
     public String toString() {
-        return name + " : " + (isOnDistance() ? "на дистанции" : "сошел с дистанции");
+        return name + " : " + (isOnDistance() ? "на дистанции" : "не на дистанции");
     }
 }
