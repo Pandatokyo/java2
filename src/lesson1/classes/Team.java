@@ -6,11 +6,7 @@ import CourseObstacles.Obstacle;
 import participants.Participant;
 import participants.Robot;
 
-/*
-2. Добавить класс Team, который будет содержать название команды,массив из четырех участников (в конструкторе можно сразу указыватьвсех участников ),
- метод для вывода информации о членах команды, прошедших дистанцию,
- метод вывода информации обо всех членах команды.
-*/
+
 public class Team {
     private final String name;// название команды
     private Participant[] participants;    // участники
@@ -28,20 +24,19 @@ public class Team {
         System.out.println("Команда: " + this.name );
         for (Participant participant : participants) {
             if (participant instanceof Dog) {
-                System.out.println("Собака " + participant.getName());
+                System.out.println("Имя собаки: " + participant.getName());
             }
             if (participant instanceof Cat) {
-                System.out.println("Кот " + participant.getName());
+                System.out.println("Имя кота: " + participant.getName());
             }
             if (participant instanceof Robot) {
-                System.out.println("Робот " + participant.getName());
+                System.out.println("Робот: " + participant.getName());
             }
         }
     }
 
     public void showResults(){
         for (Participant participant : participants) {
-            //obstacle.doIt(participant);
             if (!participant.isOnDistance()) {
                 break;
             }
